@@ -113,7 +113,8 @@ describe("Todo test suite", () => {
       : expect(parsedUpdateResponse.completed).toBe(false);
   });
 
- 
+  test("userA cannot update userB's todo", async () => {
+    const agent = request.agent(server);
 
     let x1 = await agent.get("/signup");
     let csrfToken = extractCsrfToken(x1);
