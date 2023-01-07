@@ -37,7 +37,9 @@ describe("Todo test suite", () => {
     }
   });
 
- 
+  test("Sign up", async () => {
+    let res = await agent.get("/signup");
+    const csrfToken = extractCsrfToken(res);
     res = await agent.post("/users").send({
       firstName: "Test",
       lastName: "User A",
