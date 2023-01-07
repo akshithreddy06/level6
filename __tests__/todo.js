@@ -127,7 +127,8 @@ describe("Todo test suite", () => {
       _csrf: csrfToken,
     });
 
-   
+    let res = await agent.get("/todos");
+    csrfToken = extractCsrfToken(res);
 
     await agent.post("/todos").send({
       title: "Buy milk",
