@@ -144,7 +144,7 @@ describe("Todo test suite", () => {
     const dueTodayCount = parsedGroupedResponse.duetodaytodos.length;
     const latestTodo = parsedGroupedResponse.duetodaytodos[dueTodayCount - 1];
 
-    await agent.get("/signout");
+    
 
     let x3 = await agent.get("/signup");
     csrfToken = extractCsrfToken(x3);
